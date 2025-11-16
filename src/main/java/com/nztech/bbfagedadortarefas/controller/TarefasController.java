@@ -45,7 +45,7 @@ public class TarefasController {
     public ResponseEntity<List<TarefasDTOResponse>> buscarListaTarefasPorPeriodo(
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dataInicial,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dataFinal,
-            @RequestHeader(name ="Authorization", required = false) String token
+            @RequestHeader("Authorization") String token
     ) {
         return ResponseEntity.ok(tarefasService.buscarTarefasAgendadasPorPeriodo(dataInicial, dataFinal, token));
     }
